@@ -1,7 +1,7 @@
 const notesData = [
   {
     id: "notes-jT-jjsyz61J8XKiI",
-    title: "Welcome to Notes!",
+    title: "Welcome to Notes lets go!",
     body: "Welcome to Notes! This is your first note.",
     createdAt: "2022-07-28T10:03:12.594Z",
     archived: false,
