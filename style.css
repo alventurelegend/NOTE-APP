@@ -293,7 +293,9 @@ note-container .note p {
 .footer-links {
   list-style: none;
   display: flex;
+  justify-content: center;
   gap: 20px;
+  margin-left: 10px;
 }
 
 .footer-links li {
@@ -414,6 +416,8 @@ note-container .note p {
   }
 
   .footer-links {
+    display: flex;
+    justify-content:center ;
     margin-bottom: 10px;
     width: min-content;
     margin-left: 85px;
