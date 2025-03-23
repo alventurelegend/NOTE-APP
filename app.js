@@ -61,6 +61,39 @@ class Navbar extends HTMLElement {
           color: rgb(14, 110, 255);
         }
 
+        @media (max-width: 768px) {
+          note-navbar {
+          padding: 10px;
+        }
+
+        nav {
+          flex-wrap: wrap;
+          margin: 10px;
+          gap: 10px;
+        }
+
+        nav h1 {
+          font-size: 1.2em;
+          width: 100%;
+          text-align: center;
+        }
+
+        nav ul {
+          gap: 10px;
+          margin-right: 5px;
+          margin-left: 50px;
+        }
+
+        nav a {
+          font-size: 10px;
+          transition: font-weight 0.3s color 0.3s;
+        } 
+
+        nav a:hover {
+          font-weight: bold;
+          color: #11c4ff;
+        }
+
       </style>
       <nav>
         <h1>Noteapp</h1>
@@ -134,7 +167,7 @@ class NoteForm extends HTMLElement {
         e.preventDefault();
         const title = this.shadowRoot.querySelector("#noteTitle").value;
         const content = this.shadowRoot.querySelector("#noteContent").value;
-        const createdAt = new Date().toISOString(); 
+        const createdAt = new Date().toISOString();
         this.dispatchEvent(
           new CustomEvent("noteSubmitted", {
             detail: { title, content, createdAt },
@@ -154,6 +187,13 @@ class NoteContainer extends HTMLElement {
     this.attachShadow({ mode: "open" });
     this.shadowRoot.innerHTML = `
       <style>
+
+        #notes {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          grid-gap: 10px;
+        }
+          
         .note {
           background-color: #ffffff;
           padding: 16px;
